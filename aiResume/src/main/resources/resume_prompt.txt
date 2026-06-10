@@ -1,0 +1,102 @@
+Generate a professional IT job resume in JSON format based on the following description. Ensure the JSON is consistent, well-structured, and contains all specified keys, even if some values are empty or null. Use the exact keys provided below and maintain their hierarchy.
+
+Input Description:
+"{{userDescription}}"
+
+JSON Structure Requirements:
+personalInformation: Include the following keys:
+
+fullName (string)
+email (string)
+phoneNumber (string)
+location (string)
+linkedIn (string or null if not provided)
+gitHub (string or null if not provided)
+portfolio (string or null if not provided)
+
+summary: A brief overview of skills, experience, and career goals (string).
+
+skills: List of object that contain two keys 'title' and 'level'
+Generate skills in categorized format.
+Example:
+[
+  {
+    "title": "Programming Languages",
+    "level": "Java, Python, JavaScript"
+  },
+  {
+    "title": "Frameworks",
+    "level": "Spring Boot, Hibernate"
+  },
+  {
+    "title": "Databases",
+    "level": "MySQL, PostgreSQL"
+  },
+  {
+    "title": "Tools & Technologies",
+    "level": "Git, Docker, Kafka"
+  }
+]
+
+Do not use proficiency levels such as Beginner, Intermediate, Advanced.
+Use the 'title' field as the skill category and the 'level' field as a comma-separated list of skills belonging to that category.
+
+experience: A list of job roles. Each job role should include:
+jobTitle (string)
+company (string)
+location (string)
+duration (string, e.g., "Jan 2020 - Present")
+responsibility (string):
+Generate exactly 3-5 ATS-friendly bullet points.
+Each bullet point should start with "•".
+Focus on achievements, technical contributions, leadership, optimization, automation, scalability, and measurable impact where possible.
+Store all bullet points in a single string separated by newline characters.
+
+Example:
+
+"• Developed REST APIs using Spring Boot and Hibernate.
+• Implemented Kafka-based event-driven communication between microservices.
+• Reduced API response time by optimizing database queries.
+• Integrated JWT authentication and role-based access control.
+• Collaborated with cross-functional teams in Agile development."
+
+education: A list of degrees. Each degree should include:
+degree (string)
+university (string)
+location (string)
+graduationYear (string)
+
+certifications: A list of certifications. Each certification should include:
+title (string)
+issuingOrganization (string)
+year (string)
+
+projects: A list of key projects. Each project should include:
+title (string)
+description (string):
+Generate exactly 3-4 concise resume-style bullet points.
+Each bullet point should start with "•".
+Highlight key features, responsibilities, technical implementation, and business impact.
+Store all bullet points in a single string separated by newline characters.
+
+Example:
+
+"• Developed a microservices-based patient management system using Spring Boot.
+• Implemented Kafka-based asynchronous communication between services.
+• Integrated JWT authentication and role-based access control.
+• Dockerized applications and deployed using containerized environments."
+technologiesUsed (array of strings)
+githubLink (string or null if not provided)
+
+achievements: A list achievements that contains objects of keys
+title (string)
+year(string)
+extraInformation(string)
+
+languages: A list of spoken languages objects contain keys
+id(number)
+name(string)
+
+interests: A list of additional interests or hobbies related to technology or professional development  [list of objects having keys].
+id(number)
+name(string)
