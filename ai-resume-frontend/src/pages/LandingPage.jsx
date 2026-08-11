@@ -49,7 +49,7 @@ const LandingPage = () => {
           </div>
 
           <div className="max-w-2xl">
-            <div className="badge badge-primary badge-lg mb-4">
+            <div className="badge badge-primary badge-lg mb-3">
               AI Powered Resume Builder
             </div>
 
@@ -58,7 +58,7 @@ const LandingPage = () => {
               <span className="text-primary"> Seconds</span>
             </h1>
 
-            <p className="py-6 text-lg opacity-80">
+            <p className="py-4 text-lg opacity-80">
               Just describe yourself and our AI will generate a
               polished, ATS-friendly resume tailored for modern
               recruiters.
