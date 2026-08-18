@@ -10,8 +10,8 @@ fullName (string)
 email (string)
 phoneNumber (string)
 location (string)
-linkedIn (string or null if not provided)
-gitHub (string or null if not provided)
+linkedin (string or null if not provided)
+github (string or null if not provided)
 portfolio (string or null if not provided)
 
 summary: A brief overview of skills, experience, and career goals (string).

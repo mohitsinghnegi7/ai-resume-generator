@@ -19,6 +19,7 @@ public class ResumeServiceImpl implements ResumeService{
     private ChatClient chatClient;
 
     public ResumeServiceImpl(ChatClient.Builder builder){
+
         this.chatClient = builder.build();
     }
 

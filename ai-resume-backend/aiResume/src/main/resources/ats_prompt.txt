@@ -1,0 +1,242 @@
+Analyze the following resume against the provided job description and perform
+a comprehensive ATS (Applicant Tracking System) analysis.
+
+==================== RESUME ====================
+
+{resumeText}
+
+==================== JOB DESCRIPTION ====================
+
+{jobDescription}
+
+==================================================
+
+Your task is to analyze how well the candidate's resume matches the given
+job description.
+
+Analyze the following aspects:
+
+1. ATS Score
+
+- Provide an overall ATS compatibility score from 0 to 100.
+- The score should reflect how closely the resume matches the requirements
+  of the job description.
+- Consider relevant skills, technologies, qualifications, experience,
+  projects, and job-specific requirements when determining the score.
+- Do not give a high score simply because the resume contains many generic
+  technical terms.
+
+2. Matched Keywords
+
+Identify important job-relevant keywords and skills that are supported by
+the resume and are also relevant to the job description.
+
+Focus primarily on concrete and meaningful items such as:
+
+- Programming languages
+- Frameworks
+- Libraries
+- Databases
+- Cloud technologies
+- DevOps tools
+- Testing frameworks
+- Security technologies
+- Messaging systems
+- APIs
+- Technical methodologies
+- Certifications
+- Role-specific technical skills
+
+Use semantic similarity when comparing technically equivalent terms, but do
+not treat loosely related concepts as exact matches.
+
+For example:
+
+"REST APIs" and "RESTful web services" can be considered a match.
+
+However:
+
+"System Design" should NOT be considered a match merely because the resume
+contains "Microservices Architecture".
+
+Avoid adding generic conceptual phrases such as:
+
+- "Relational databases"
+- "Messaging systems"
+- "Asynchronous communication"
+- "Event-driven"
+- "Problem-solving skills"
+
+unless the job description explicitly treats them as important skills and
+the resume clearly demonstrates them.
+
+Prefer concrete keyword names such as:
+
+- Java
+- Spring Boot
+- Kafka
+- MySQL
+- Docker
+- AWS
+- JWT
+
+3. Missing Keywords
+
+Identify important job-specific keywords and technical skills that are
+explicitly required or preferred in the job description but are not
+supported by the resume.
+
+Only include concrete and meaningful items such as:
+
+- Programming languages
+- Frameworks
+- Libraries
+- Databases
+- Cloud technologies
+- DevOps tools
+- Testing frameworks
+- Security technologies
+- Messaging systems
+- Certifications
+- Relevant technical skills
+
+Do NOT include:
+
+- Generic soft skills such as "communication skills"
+- Generic responsibilities such as "troubleshoot production issues"
+- Generic phrases such as "optimize database performance"
+- Complete sentences
+- Generic English words
+
+Prefer concise keyword names such as:
+
+"JUnit"
+"Mockito"
+"PostgreSQL"
+"Redis"
+"Kubernetes"
+"AWS S3"
+"Elasticsearch"
+
+Only mark a keyword as missing if it is genuinely absent or unsupported
+by the resume.
+
+4. AI-Powered Optimization Suggestions
+
+Provide practical and actionable suggestions for improving the resume
+for this specific job description.
+
+Suggestions may include improvements to:
+
+- Professional summary
+- Technical skills
+- Experience
+- Projects
+- Achievements
+- Resume wording
+- Keyword placement
+- Technical descriptions
+
+IMPORTANT:
+
+- Never invent skills, experience, projects, certifications, achievements,
+  metrics, or responsibilities.
+- Never tell the candidate to falsely add a technology or experience.
+- If recommending a missing skill, explicitly state:
+
+"Add this only if you have practical experience with it."
+
+- Never recommend adding a missing technology merely because the candidate
+  has studied, explored, watched tutorials about, or has theoretical
+  knowledge of it.
+
+- Do not recommend adding a "learning", "explored", "familiar with", or
+  "beginner" technology to the resume as a technical skill.
+
+- A missing technology should only be recommended for addition when the
+  resume provides evidence of practical usage through projects,
+  professional experience, internships, or other clearly stated hands-on
+  experience.
+
+- If there is no evidence of practical experience, describe the technology
+  only as a skill gap. Do not suggest adding it to the resume.
+
+
+- Prefer improving existing resume content before suggesting completely
+  new skills.
+- Suggest quantifiable impact only when supported by actual information.
+- Never fabricate percentages, numbers, performance improvements, users,
+  requests per second, or business impact.
+- Do not assume the candidate knows a technology just because it appears
+  in the job description.
+
+5. Overall Assessment
+
+Provide a concise assessment of how well the resume matches the job
+description.
+
+Mention:
+
+- Major strengths
+- Important gaps
+- Overall suitability for the role
+
+IMPORTANT RULES:
+
+- Analyze ONLY the information explicitly provided in the resume and job
+  description.
+- Never infer or assume the candidate's education level, degree, experience,
+  job title, career status, location, certifications, or personal details.
+- Never create personal information that is not present in the resume.
+- Never assume that the candidate has a skill simply because it appears
+  in a project context unless the resume supports that skill.
+- Do not recommend adding a technology to the resume merely because the
+    candidate has studied or explored it unless the resume clearly supports
+    that experience.
+- Learning a technology alone should not be treated as professional or
+    practical experience.
+- Focus on job-relevant information.
+- Prioritize concrete technical and role-specific requirements.
+- Ignore common English words such as "the", "and", "with", "for", "to",
+  "of", etc.
+- Keep matched and missing keywords concise.
+- Avoid duplicate keywords.
+- Do not include the same keyword in both matchedKeywords and
+  missingKeywords.
+- Use semantic similarity only when the technical meaning is genuinely
+  equivalent.
+- Do not treat loosely related technologies as equivalent.
+
+==================== RESPONSE FORMAT ====================
+
+Return ONLY valid JSON.
+
+The JSON must follow exactly this structure:
+
+{
+  "score": 0,
+  "status": "",
+  "matchedKeywords": [],
+  "missingKeywords": [],
+  "suggestions": [],
+  "overallAssessment": ""
+}
+
+JSON RULES:
+
+- "score" must be an integer between 0 and 100.
+- "status" must be one of:
+  "Excellent Match"
+  "Good Match"
+  "Moderate Match"
+  "Poor Match"
+
+- "matchedKeywords" must be an array of strings.
+- "missingKeywords" must be an array of strings.
+- "suggestions" must be an array of strings.
+- "overallAssessment" must be a concise string.
+- Do not duplicate keywords.
+- Return valid JSON only.
+- Do not use Markdown.
+- Do not wrap the response in ```json.
+- Do not include any explanation outside the JSON.
