@@ -69,9 +69,9 @@ const LandingPage = () => {
                 Create Resume Free
               </Link>
 
-              <button className="btn btn-outline btn-lg">
-                Watch Demo
-              </button>
+              <Link to={'/ats-analyzer'} className="btn btn-outline btn-lg">
+                Check ATS
+              </Link>
             </div>
           </div>
         </div>

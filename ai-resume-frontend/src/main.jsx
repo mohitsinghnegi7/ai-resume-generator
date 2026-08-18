@@ -10,6 +10,7 @@ import Service from './pages/Service.jsx'
 import Contact from './pages/Contact.jsx'
 import GenerateResume from './pages/GenerateResume.jsx'
 import { Toaster } from "react-hot-toast";
+import AtsAnalyzer from './pages/AtsAnalyzer.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -22,6 +23,7 @@ createRoot(document.getElementById('root')).render(
             <Route path='about' element={<About/>}/>
             <Route path='contact' element={<Contact/>}/>
             <Route path='generate-resume' element={<GenerateResume/>}/>
+            <Route path='/ats-analyzer' element={<AtsAnalyzer/>}/>
         </Route>
 
 

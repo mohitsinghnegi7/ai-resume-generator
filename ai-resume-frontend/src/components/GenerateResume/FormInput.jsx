@@ -5,6 +5,7 @@ const FormInput = ({
   name,
   label,
   type = "text",
+  required = false
 }) => {
   return (
     <div>
@@ -14,15 +15,18 @@ const FormInput = ({
 
         <span className="label-text text-base-content">
           {label}
+           {required && <span className="text-error ml-1">*</span>}
         </span>
 
       </label>
 
       <input
-        type={type}
-        {...register(name)}
-        className="input input-bordered rounded-xl w-full bg-base-100 text-base-content"
-      />
+          type={type}
+          {...register(name, {
+            required: required ? `${label} is required` : false,
+          })}
+          className="input input-bordered rounded-xl w-full bg-base-100 text-base-content"
+        />
 
     </div>
     </div>

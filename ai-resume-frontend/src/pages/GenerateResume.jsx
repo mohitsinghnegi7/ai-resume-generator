@@ -8,6 +8,7 @@ import BottomHighlight from '../components/GenerateResume/BottomHighlight'
 import Feature from '../components/GenerateResume/Feature';
 import { useForm, useFieldArray } from 'react-hook-form';
 import ResumeForm from '../components/GenerateResume/ResumeForm';
+import Resume from '../components/Resume';
 
 
 const GenerateResume = () => {
@@ -46,11 +47,18 @@ const GenerateResume = () => {
     //handle Form submit
     const onSubmit = (data)=>{
       console.log("Form Data : ", data)
+      setData({ ...data });
+      setShowFormUi(false);
+    setShowPromptInput(false);
+    setShowResumeUI(true);
+
           }
 
     const [description, setDescription] = useState("");
     const [loading, setLoading] = useState(false);
     const [showFormUi, setShowFormUi] = useState(false);
+     const [showResumeUI, setShowResumeUI] = useState(false);
+  const [showPromptInput, setShowPromptInput] = useState(true);
   
 
 
@@ -75,6 +83,8 @@ const handleGenerate =async () => {
         setData(responseData.data);
         reset(responseData.data);
         setShowFormUi(true);
+        setShowPromptInput(false);
+        setShowResumeUI(false);
         
         toast.success("Resume Generated Successfully!",{
             duration: 3000,
@@ -184,6 +194,38 @@ const handleClear = () => {
     setDescription("");
 };
 
+function showResume() {
+    return (
+      <div>
+        <Resume data={data} />
+
+        <div className="flex mt-5 justify-center gap-2">
+          <div
+            onClick={() => {
+              setShowPromptInput(true);
+              setShowFormUi(false);
+              setShowResumeUI(false);
+            }}
+            className="btn btn-accent"
+          >
+            Generate Another
+          </div>
+          <div
+            onClick={() => {
+              setShowPromptInput(false);
+              setShowFormUi(true);
+              setShowResumeUI(false);
+            }}
+            className="btn btn-success"
+          >
+            Edit
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+
   return (
     <div>
       <div className="relative min-h-screen overflow-hidden bg-gradient-to-br from-base-300 via-base-200 to-base-300 flex flex-col items-center justify-center px-4 py-10">
@@ -198,7 +240,8 @@ const handleClear = () => {
           projectsFields={projectsFields}
           languagesFields={languagesFields}
           interestsFields={interestsFields}/>} 
-      {showInputField()}
+      {showPromptInput && showInputField()}
+      {showResumeUI && showResume()}
    
     </div>
     </div>

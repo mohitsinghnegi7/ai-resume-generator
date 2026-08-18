@@ -34,6 +34,7 @@ const ResumeForm = ({  register,
                     register={register}
                     name="personalInformation.fullName"
                     label="Full Name"
+                    required
                     />
 
                     <FormInput 
@@ -41,6 +42,7 @@ const ResumeForm = ({  register,
                     name="personalInformation.email"
                     label="Email"
                     type="email"
+                    required
                     />
 
                     <FormInput 
@@ -48,12 +50,14 @@ const ResumeForm = ({  register,
                     name="personalInformation.phoneNumber"
                     label="Phone Number"
                     type="tel"
+                    required
                     />
 
                     <FormInput 
                     register={register}
                     name="personalInformation.location"
                     label="Location"
+                    required
                     />
 
                     <FormInput 
@@ -61,6 +65,7 @@ const ResumeForm = ({  register,
                     name="personalInformation.linkedin"
                     label="LinkedIn"
                     type="url"
+                    required
                     />
 
                     <FormInput 
@@ -68,6 +73,7 @@ const ResumeForm = ({  register,
                     name="personalInformation.github"
                     label="Github"
                     type="url"
+                    required
                     />
 
                     <FormInput
@@ -77,18 +83,6 @@ const ResumeForm = ({  register,
                     type="url"
                     />
 
-
-                    {/* {renderInput("personalInformation.fullName", "Full Name")}
-                    {renderInput("personalInformation.email", "Email", "email")}
-                    {renderInput(
-                      "personalInformation.phoneNumber",
-                      "Phone Number",
-                      "tel"
-                    )}
-                    {renderInput("personalInformation.location", "Location")}
-                    {renderInput("personalInformation.linkedin", "LinkedIn", "url")}
-                    {renderInput("personalInformation.github", "Github", "url")}
-                    {renderInput("personalInformation.portfolio", "Portfolio", "url")} */}
                   </div>
       
                   <h3 className="text-xl font-semibold">Summary</h3>
